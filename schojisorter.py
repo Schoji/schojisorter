@@ -1,5 +1,15 @@
+from ast import Mod
 import os
-from colorama import Fore, init
+import sys
+import subprocess
+
+#Try to import colorama, if module not found, install it and then import it again.
+try:
+    from colorama import Fore, init
+except ModuleNotFoundError:
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'colorama'])
+    from colorama import Fore, init
+    
 
 init(convert=True)
 os.system("mode 360")
