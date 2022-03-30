@@ -1,4 +1,3 @@
-from ast import Mod
 import os
 import sys
 import subprocess
@@ -10,11 +9,13 @@ except ModuleNotFoundError:
     subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'colorama'])
     from colorama import Fore, init
     
-
+#Colorama config
 init(convert=True)
 os.system("mode 360")
 os.system("cls")
 
+#Hello message, it contains a full list of instructions which is showed every time the 
+#script launched or upon typing "help"
 def hello():
     print("Choose your directory")
     print("You can change directories by typing names of subsequent folders OR")
@@ -25,6 +26,7 @@ def hello():
     print("If you have any trouble, type " + Fore.BLUE + "HELP" + Fore.RESET)
 
 hello()
+
 try:
     while True:
         print(Fore.RESET + "Enter the name of folder or press" + Fore.BLUE + " RETURN" + Fore.RESET)
