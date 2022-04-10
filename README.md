@@ -14,11 +14,16 @@ D:/Data/SortingDirectory
 you can also use:
 * ls - to list a directory
 * cd.. - to go back
+* exit - to exit the app
+* help - to list all available commands
 
 When you are done, just press the RETURN or ENTER key on your keyboard. You will be prompted with a confirmation question. Type YES, and you're done! <br/> <br/>
 ![showcase1](https://user-images.githubusercontent.com/96655599/160690025-5f6d3088-e480-41b5-ab09-d86b21f0e114.gif)
 # How it works
 It uses os module to list all files in current directory and then makes one folder per file extension. After that, it moves files to their destination. It's very simple!
+
+:warning: Using this app on a system directory is not recommended, because it could potentially harm your operating system.
+
 # ToDo
 * Gui (Graphical User Interface)
 * An user defined selection of files to be sorted

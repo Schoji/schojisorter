@@ -19,11 +19,13 @@ os.system("cls")
 def hello():
     print("Choose your directory")
     print("You can change directories by typing names of subsequent folders OR")
-    print("You can also enter an absolute path to a directory like 'D:/Data/File'")
-    print("Confirm by typing " + Fore.BLUE + "RETURN" + Fore.RESET)
-    print("If you want to view contents of directory type " + Fore.BLUE + "ls" + Fore.RESET)
-    print("If you want to go back type " + Fore.BLUE + "cd.." + Fore.RESET)
-    print("If you have any trouble, type " + Fore.BLUE + "HELP" + Fore.RESET)
+    print("You can also enter an absolute path to a directory like 'D:/Data/Directory'")
+    print("List of available actions:")
+    print("\t - Confirm by pressing " + Fore.BLUE + "RETURN" + Fore.RESET)
+    print("\t - If you want to view contents of directory type " + Fore.BLUE + "ls" + Fore.RESET + " or " + Fore.BLUE + "dir" + Fore.RESET)
+    print("\t - If you want to go back type " + Fore.BLUE + "cd.." + Fore.RESET)
+    print("\t - If you have any trouble type " + Fore.BLUE + "help" + Fore.RESET)
+    print("\t - If you want to exit the app type " + Fore.BLUE + "exit" + Fore.RESET )
 
 hello()
 
@@ -37,14 +39,19 @@ try:
                 break
             else:
                 continue
-        elif directory == "ls":
+        elif directory == "ls" or directory == "dir":
             for file in os.listdir():
                 if "." not in file:
                     print(Fore.YELLOW + file + Fore.RESET)
-        elif directory == "cd..":
+                else:
+                    print(Fore.GREEN + file + Fore.RESET)
+        elif directory == "cd.." or directory == "cd ..":
             os.chdir("..")
         elif directory == "help":
             hello()
+        elif directory == "exit":
+            print("\nHave a great day!")
+            exit()
         else:
             try:
                 os.chdir(directory)
@@ -72,5 +79,5 @@ try:
     print("Done!")
 
 except KeyboardInterrupt:
-    print("\nBye!")
+    print("\nHave a great day!")
     quit
